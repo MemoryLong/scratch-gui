@@ -135,7 +135,9 @@ const ProjectFetcherHOC = function (WrappedComponent) {
         setProjectId: PropTypes.func
     };
     ProjectFetcherComponent.defaultProps = {
-        assetHost: 'https://assets.scratch.mit.edu',
+        /* 角色资源由线上调整为web服务器本地*/
+        // assetHost: 'https://assets.scratch.mit.edu',
+        assetHost: 'http://127.0.0.1:8601',
         projectHost: 'https://projects.scratch.mit.edu'
     };
 

@@ -105,8 +105,11 @@ class LibraryItem extends React.PureComponent {
     }
     render () {
         const iconMd5 = this.curIconMd5();
+
+        /* 角色资源由线上调整为web服务器本地*/
+        // const iconURL = iconMd5 ? `https://cdn.assets.scratch.mit.edu/internalapi/asset/${iconMd5}/get/` : this.props.iconRawURL;
         const iconURL = iconMd5 ?
-            `https://cdn.assets.scratch.mit.edu/internalapi/asset/${iconMd5}/get/` :
+            `./static/asset/${iconMd5}` :
             this.props.iconRawURL;
         return (
             <LibraryItemComponent
