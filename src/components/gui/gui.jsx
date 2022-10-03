@@ -119,6 +119,14 @@ const GUIComponent = props => {
         telemetryModalVisible,
         tipsLibraryVisible,
         vm,
+        /*
+         * @description: 实现登录本地化
+         * @param null:
+         * @return: null
+         * @author: zhouhaifeng
+         * @date: 2022/9/18 16:06
+         **/
+        loginState,
         ...componentProps
     } = omit(props, 'dispatch');
     if (children) {
@@ -236,6 +244,7 @@ const GUIComponent = props => {
                     onShare={onShare}
                     onStartSelectingFileUpload={onStartSelectingFileUpload}
                     onToggleLoginOpen={onToggleLoginOpen}
+                    loginState={loginState}
                 />
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
@@ -436,7 +445,11 @@ GUIComponent.defaultProps = {
     canRemix: false,
     canSave: false,
     canCreateCopy: false,
-    canShare: false,
+    /* 解释：是否显示立即分享按钮
+    ** 默认值：false
+     ** 作用：分享发布当前的project*/
+    // canShare: false,
+    canShare: true,
     canUseCloud: false,
     enableCommunity: false,
     isCreating: false,

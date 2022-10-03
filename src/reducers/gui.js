@@ -26,6 +26,14 @@ import toolboxReducer, {toolboxInitialState} from './toolbox';
 import vmReducer, {vmInitialState} from './vm';
 import vmStatusReducer, {vmStatusInitialState} from './vm-status';
 import workspaceMetricsReducer, {workspaceMetricsInitialState} from './workspace-metrics';
+/*
+ * @description: 实现登录本地化
+ * @param null:
+ * @return: null
+ * @author: zhouhaifeng
+ * @date: 2022/9/18 15:50
+ **/
+import userStateReducer, {userStateInitialState} from './user-state';
 import throttle from 'redux-throttle';
 
 import decks from '../lib/libraries/decks/index.jsx';
@@ -59,7 +67,15 @@ const guiInitialState = {
     toolbox: toolboxInitialState,
     vm: vmInitialState,
     vmStatus: vmStatusInitialState,
-    workspaceMetrics: workspaceMetricsInitialState
+    workspaceMetrics: workspaceMetricsInitialState,
+    /*
+     * @description: 实现登录本地化
+     * @param null:
+     * @return: null
+     * @author: zhouhaifeng
+     * @date: 2022/9/18 15:51
+     **/
+    userStateReducer: userStateInitialState
 };
 
 const initPlayer = function (currentState) {
@@ -158,7 +174,15 @@ const guiReducer = combineReducers({
     toolbox: toolboxReducer,
     vm: vmReducer,
     vmStatus: vmStatusReducer,
-    workspaceMetrics: workspaceMetricsReducer
+    workspaceMetrics: workspaceMetricsReducer,
+    /*
+     * @description: 实现登录本地化
+     * @param null:
+     * @return: null
+     * @author: zhouhaifeng
+     * @date: 2022/9/18 15:52
+     **/
+    userState: userStateReducer
 });
 
 export {

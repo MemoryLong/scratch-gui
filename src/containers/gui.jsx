@@ -39,6 +39,14 @@ import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';
 
 import GUIComponent from '../components/gui/gui.jsx';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
+/*
+ * @description: 实现登录本地化
+ * @param null:
+ * @return: null
+ * @author: zhouhaifeng
+ * @date: 2022/9/18 16:01
+ **/
+import {getIsLogined} from '../reducers/user-state';
 
 class GUI extends React.Component {
     componentDidMount () {
@@ -113,7 +121,15 @@ GUI.propTypes = {
     projectHost: PropTypes.string,
     projectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     telemetryModalVisible: PropTypes.bool,
-    vm: PropTypes.instanceOf(VM).isRequired
+    vm: PropTypes.instanceOf(VM).isRequired,
+    /*
+     * @description: 实现登录本地化
+     * @param null:
+     * @return: null
+     * @author: zhouhaifeng
+     * @date: 2022/9/18 15:54
+     **/
+    loginState: PropTypes.bool
 };
 
 GUI.defaultProps = {
@@ -150,7 +166,15 @@ const mapStateToProps = state => {
         ),
         telemetryModalVisible: state.scratchGui.modals.telemetryModal,
         tipsLibraryVisible: state.scratchGui.modals.tipsLibrary,
-        vm: state.scratchGui.vm
+        vm: state.scratchGui.vm,
+        /*
+         * @description: 实现登录本地化
+         * @param null:
+         * @return: null
+         * @author: zhouhaifeng
+         * @date: 2022/9/18 15:56
+         **/
+        loginState: getIsLogined(state.scratchGui.loginState)
     };
 };
 

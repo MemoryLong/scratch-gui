@@ -138,26 +138,58 @@ module.exports = [
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'gui'],
                 template: 'src/playground/index.ejs',
-                title: 'Scratch 3.0 GUI',
+                /*
+                 * @description: 修改网站title
+                 * @param null:
+                 * @return: null
+                 * @author: zhouhaifeng
+                 * @date: 2022/9/18 20:16
+                 **/
+                // title: 'Scratch 3.0 GUI',
+                title: '少儿编程',
                 sentryConfig: process.env.SENTRY_CONFIG ? '"' + process.env.SENTRY_CONFIG + '"' : null
             }),
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'blocksonly'],
                 template: 'src/playground/index.ejs',
                 filename: 'blocks-only.html',
-                title: 'Scratch 3.0 GUI: Blocks Only Example'
+                /*
+                 * @description: 修改网站title
+                 * @param null:
+                 * @return: null
+                 * @author: zhouhaifeng
+                 * @date: 2022/9/18 20:16
+                 **/
+                // title: 'Scratch 3.0 GUI: Blocks Only Example'
+                title: '少儿编程: 积木样例'
             }),
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'compatibilitytesting'],
                 template: 'src/playground/index.ejs',
                 filename: 'compatibility-testing.html',
-                title: 'Scratch 3.0 GUI: Compatibility Testing'
+                /*
+                 * @description: 修改网站title
+                 * @param null:
+                 * @return: null
+                 * @author: zhouhaifeng
+                 * @date: 2022/9/18 20:16
+                 **/
+                // title: 'Scratch 3.0 GUI: Compatibility Testing'
+                title: '少儿编程: Compatibility Testing'
             }),
             new HtmlWebpackPlugin({
                 chunks: ['lib.min', 'player'],
                 template: 'src/playground/index.ejs',
                 filename: 'player.html',
-                title: 'Scratch 3.0 GUI: Player Example'
+                /*
+                 * @description: 修改网站title
+                 * @param null:
+                 * @return: null
+                 * @author: zhouhaifeng
+                 * @date: 2022/9/18 20:16
+                 **/
+                // title: 'Scratch 3.0 GUI: Player Example'
+                title: '少儿编程: Player Example'
             }),
             new CopyWebpackPlugin({
                 patterns: [
