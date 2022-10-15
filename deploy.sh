@@ -9,7 +9,10 @@ PID=`ps -ef | grep ${APP_NAME} | grep -v grep | awk '{print $2}'` && kill -9 ${P
 git clone https://github.com/MemoryLong/scratch-gui.git
 
 cd scratch-gui
-git pull  https://github.com/MemoryLong/scratch-gui.git
-npm install
 
+# 更新代码
+git pull
+
+# install、start
+npm install
 nohup npm start & sleep 1
